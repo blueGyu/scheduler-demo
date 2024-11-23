@@ -1,0 +1,19 @@
+#option {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  font-size: 14px;
+  color: #999999;
+}
+
+a:not(:first-child)::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #999999;
+  margin: 2px 12px 0;
+  vertical-align: top;
+}
