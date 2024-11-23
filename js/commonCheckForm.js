@@ -17,6 +17,7 @@ export function checkIdReturnElem(input) {
 
   const span = document.createElement("span");
   span.id = "id_err_msg";
+  span.className = "err";
 
   if (value === "") {
     span.innerHTML = "아이디를 확인해주세요.";
@@ -42,6 +43,7 @@ export function checkPasswordReturnElem(input) {
 
   const span = document.createElement("span");
   span.id = "pw_err_msg";
+  span.className = "err";
 
   if (value === "") {
     span.innerHTML = "비밀번호를 확인해주세요.";
@@ -61,6 +63,27 @@ export function checkPasswordReturnElem(input) {
   }
 }
 
+export function checkConfirmReturnElem(input) {
+  const value = input.target ? input.target.value : input;
+
+  const removeElem = document.getElementById("confirm_err_msg");
+  if (removeElem) {
+    removeElem.remove();
+  }
+
+  const span = document.createElement("span");
+  span.id = "confirm_err_msg";
+  span.className = "err";
+
+  const password = document.getElementById("confirm").value;
+  if (value === password) {
+    span.innerHTML = "비밀번호와 일치하지 않습니다.";
+    return span;
+  } else {
+    return "";
+  }
+}
+
 export function checkEmailReturnElem(input) {
   const value = input.target ? input.target.value : input;
 
@@ -71,15 +94,16 @@ export function checkEmailReturnElem(input) {
 
   const span = document.createElement("span");
   span.id = "email_err_msg";
+  span.className = "err";
 
   if (value === "") {
-    span.innerHTML = "비밀번호를 확인해주세요.";
+    span.innerHTML = "이메일을 확인해주세요.";
     return span;
   } else if (value.length > 100) {
-    span.innerHTML = "비밀번호를 확인해주세요. 최대 100자로 구성되어야합니다.";
+    span.innerHTML = "이메일을 확인해주세요. 최대 100자로 구성되어야합니다.";
     return span;
   } else if (!emailRegex.test(value)) {
-    span.innerHTML = "비밀번호를 확인해주세요. 이메일 양식에 맞지 않습니다.";
+    span.innerHTML = "이메일을 확인해주세요. 이메일 양식에 맞지 않습니다.";
     return span;
   } else {
     return "";
@@ -96,6 +120,7 @@ export function checkNameReturnElem(input) {
 
   const span = document.createElement("span");
   span.id = "name_err_msg";
+  span.className = "err";
 
   if (value === "") {
     span.innerHTML = "이름을 확인해주세요.";
@@ -121,6 +146,7 @@ export function checkPhoneReturnElem(input) {
 
   const span = document.createElement("span");
   span.id = "phone_err_msg";
+  span.className = "err";
 
   if (value === "") {
     span.innerHTML = "전화번호를 확인해주세요.";

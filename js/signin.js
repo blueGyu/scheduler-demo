@@ -1,6 +1,6 @@
-import { checkIdReturnElem, checkPasswordReturnElem } from "./checkFormEvents.js";
+import { checkIdReturnElem, checkPasswordReturnElem } from "./commonCheckForm.js";
 
-document.getElementById("id").addEventListener("input", (event) => {
+document.getElementById("id").addEventListener("change", (event) => {
   const msgElem = checkIdReturnElem(event);
 
   if (msgElem) {
@@ -9,7 +9,7 @@ document.getElementById("id").addEventListener("input", (event) => {
   }
 });
 
-document.getElementById("password").addEventListener("input", (event) => {
+document.getElementById("password").addEventListener("change", (event) => {
   const msgElem = checkPasswordReturnElem(event);
 
   if (msgElem) {
@@ -25,13 +25,15 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const idErrElem = checkIdReturnElem(targetIdElem.value);
   if (idErrElem) {
     targetIdElem.insertAdjacentElement("afterend", idErrElem);
-    return false;
   }
 
   const targetPasswordElem = document.getElementById("password");
   const passwordErrElem = checkPasswordReturnElem(targetPasswordElem.value);
   if (passwordErrElem) {
     targetPasswordElem.insertAdjacentElement("afterend", passwordErrElem);
+  }
+
+  if (passwordErrElem || idErrElem) {
     return false;
   }
 
