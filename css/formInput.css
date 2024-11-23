@@ -30,14 +30,6 @@ h2 {
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  gap: 12px;
-}
-
 select,
 input {
   width: 350px;
