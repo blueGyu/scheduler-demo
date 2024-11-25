@@ -75,7 +75,7 @@ export function checkConfirmReturnElem(input) {
   span.id = "confirm_err_msg";
   span.className = "err";
 
-  const password = document.getElementById("confirm").value;
+  const password = document.getElementById("password").value;
   if (value === password) {
     span.innerHTML = "비밀번호와 일치하지 않습니다.";
     return span;
