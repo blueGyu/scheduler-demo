@@ -11,8 +11,7 @@ document.getElementById("id").addEventListener("change", (event) => {
   const msgElem = checkIdReturnElem(event);
 
   if (msgElem) {
-    const target = document.getElementById("id");
-    target.insertAdjacentElement("afterend", msgElem);
+    event.target.insertAdjacentElement("afterend", msgElem);
   }
 });
 
@@ -22,30 +21,30 @@ document.getElementById("password").addEventListener("change", (event) => {
   const lengthCondition = document.getElementById("length-condition");
   const lengthIcon = lengthCondition.children[0];
   if (value.length < 8 || value.length > 32) {
-    lengthCondition.classList.remove("confirm");
+    lengthCondition.className = "err";
     lengthIcon.innerHTML = "✕";
   } else {
-    lengthCondition.classList.add("confirm");
+    lengthCondition.className = "succ";
     lengthIcon.innerHTML = "✔";
   }
 
   const capitalCondition = document.getElementById("capital-condition");
   const capitalIcon = capitalCondition.children[0];
   if (!passwordCapitalRegex.test(value)) {
-    capitalCondition.classList.remove("confirm");
+    capitalCondition.className = "err";
     capitalIcon.innerHTML = "✕";
   } else {
-    capitalCondition.classList.add("confirm");
+    capitalCondition.className = "succ";
     capitalIcon.innerHTML = "✔";
   }
 
   const specialCondition = document.getElementById("special-condition");
   const specialIcon = specialCondition.children[0];
   if (!passwordSpeicalRegex.test(value)) {
-    specialCondition.classList.remove("confirm");
+    specialCondition.className = "err";
     specialIcon.innerHTML = "✕";
   } else {
-    specialCondition.classList.add("confirm");
+    specialCondition.className = "succ";
     specialIcon.innerHTML = "✔";
   }
 });
@@ -54,8 +53,7 @@ document.getElementById("confirm").addEventListener("change", (event) => {
   const msgElem = checkConfirmReturnElem(event);
 
   if (msgElem) {
-    const target = document.getElementById("confirm");
-    target.insertAdjacentElement("afterend", msgElem);
+    event.target.insertAdjacentElement("afterend", msgElem);
   }
 });
 
@@ -63,8 +61,7 @@ document.getElementById("email").addEventListener("change", (event) => {
   const msgElem = checkEmailReturnElem(event);
 
   if (msgElem) {
-    const target = document.getElementById("email");
-    target.insertAdjacentElement("afterend", msgElem);
+    event.target.insertAdjacentElement("afterend", msgElem);
   }
 });
 
@@ -98,7 +95,9 @@ document.querySelectorAll("#department-dropdown li").forEach((li) => {
 
     // 부서 미선택 안내 메시지 삭제
     const errMsg = document.getElementById("department_err_msg");
-    if (errMsg && document.getElementById("department").value !== "0") {
+    if (errMsg) {
+      errMsg.remove();
+    } else if (document.getElementById("department").value !== "0") {
       errMsg.remove();
     }
 
@@ -146,7 +145,9 @@ document.querySelectorAll("#rank-dropdown li").forEach((li) => {
 
     // 직급 미선택 안내 메시지 삭제
     const errMsg = document.getElementById("rank_err_msg");
-    if (errMsg && document.getElementById("rank").value !== "0") {
+    if (errMsg) {
+      errMsg.remove();
+    } else if (document.getElementById("rank").value !== "0") {
       errMsg.remove();
     }
 
@@ -189,8 +190,7 @@ document.getElementById("phone").addEventListener("change", (event) => {
   const msgElem = checkPhoneReturnElem(event);
 
   if (msgElem) {
-    const target = document.getElementById("phone");
-    target.insertAdjacentElement("afterend", msgElem);
+    event.target.insertAdjacentElement("afterend", msgElem);
   }
 });
 
@@ -211,33 +211,33 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const lengthCondition = document.getElementById("length-condition");
   const lengthIcon = lengthCondition.children[0];
   if (passwordValue.length < 8 || passwordValue.length > 32) {
-    lengthCondition.classList.remove("confirm");
+    lengthCondition.className = "err";
     lengthIcon.innerHTML = "✕";
     passwordErrElem = 1;
   } else {
-    lengthCondition.classList.add("confirm");
+    lengthCondition.className = "succ";
     lengthIcon.innerHTML = "✔";
   }
 
   const capitalCondition = document.getElementById("capital-condition");
   const capitalIcon = capitalCondition.children[0];
   if (!passwordCapitalRegex.test(passwordValue)) {
-    capitalCondition.classList.remove("confirm");
+    capitalCondition.className = "err";
     capitalIcon.innerHTML = "✕";
     passwordErrElem = 1;
   } else {
-    capitalCondition.classList.add("confirm");
+    capitalCondition.className = "succ";
     capitalIcon.innerHTML = "✔";
   }
 
   const specialCondition = document.getElementById("special-condition");
   const specialIcon = specialCondition.children[0];
   if (!passwordSpeicalRegex.test(passwordValue)) {
-    specialCondition.classList.remove("confirm");
+    specialCondition.className = "err";
     specialIcon.innerHTML = "✕";
     passwordErrElem = 1;
   } else {
-    specialCondition.classList.add("confirm");
+    specialCondition.className = "succ";
     specialIcon.innerHTML = "✔";
   }
 
