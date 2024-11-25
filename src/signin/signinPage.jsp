@@ -21,7 +21,7 @@
                 </form> 
                 <div id="option">
                     <a href="/src/findId/findIdPage.jsp">아이디 찾기</a>
-                    <a href="">비밀번호 찾기</a>
+                    <a href="/src/findPassword/findPasswordPage.jsp">비밀번호 찾기</a>
                     <a href="/src/signup/signupPage.jsp">회원가입</a>
                 </div>   
             </div>
