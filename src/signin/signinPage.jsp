@@ -20,7 +20,7 @@
                     <button class="primary" type="submit">로그인</button>
                 </form> 
                 <div id="option">
-                    <a href="">아이디 찾기</a>
+                    <a href="/src/findId/findIdPage.jsp">아이디 찾기</a>
                     <a href="">비밀번호 찾기</a>
                     <a href="/src/signup/signupPage.jsp">회원가입</a>
                 </div>   
