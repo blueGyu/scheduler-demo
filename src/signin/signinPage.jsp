@@ -14,7 +14,7 @@
             <h1>stageus</h1>
             <div id="form-wrap">
                 <h2>로그인</h2>
-                <form method="post" action="">
+                <form method="post" action="signinAction.jsp">
                     <input id="id" name="id" type="text" placeholder="아이디"/>
                     <input id="password" name="password" type="password" placeholder="비밀번호"/>
                     <button class="primary" type="submit">로그인</button>
