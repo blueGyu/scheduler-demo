@@ -97,7 +97,7 @@ document.querySelectorAll("#department-dropdown li").forEach((li) => {
     const errMsg = document.getElementById("department_err_msg");
     if (errMsg) {
       errMsg.remove();
-    } else if (document.getElementById("department").value !== "0") {
+    } else if (errMsg && document.getElementById("department").value !== "0") {
       errMsg.remove();
     }
 
@@ -147,7 +147,7 @@ document.querySelectorAll("#rank-dropdown li").forEach((li) => {
     const errMsg = document.getElementById("rank_err_msg");
     if (errMsg) {
       errMsg.remove();
-    } else if (document.getElementById("rank").value !== "0") {
+    } else if (errMsg && document.getElementById("rank").value !== "0") {
       errMsg.remove();
     }
 
@@ -312,5 +312,5 @@ document.querySelector("form").addEventListener("submit", (event) => {
     return false;
   }
 
-  return true;
+  event.target.submit();
 });
