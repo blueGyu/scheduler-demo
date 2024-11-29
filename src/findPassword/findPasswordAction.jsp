@@ -63,7 +63,7 @@
 
         connect = DriverManager.getConnection("jdbc:mariadb://localhost:3306/scheduler", "bluegyu", "1234");
 
-        String sql = "SELECT 1 FROM member_tb WHERE id=? AND email=? AND name=? AND phone=? LIMIT 1;";
+        String sql = "SELECT member_id FROM member_tb WHERE id=? AND email=? AND name=? AND phone=? LIMIT 1;";
         PreparedStatement query = connect.prepareStatement(sql);
         query.setString(1, id);
         query.setString(2, email);
@@ -76,6 +76,7 @@
             out.println("<script>alert('가입된 이력이 없습니다.'); location.href='/src/signin/signinPage.jsp'</script>");
         } else {
             // 세션 생성 - 회원번호
+            session.setAttribute("changePasswordMemberId", result.getString("member_id"));
             out.println("<script>alert('회원정보가 확인되었습니다.'); location.href='/src/changePassword/changePasswordPage.jsp'</script>");
         }
     } catch (SQLException err) {

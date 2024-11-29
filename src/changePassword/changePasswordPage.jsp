@@ -14,7 +14,7 @@
             <h1>stageus</h1>
             <div id="form-wrap">
                 <h2>비밀번호 변경</h2>
-                <form method="post" action="">
+                <form method="post" action="changePasswordAction.jsp">
                     <input id="password" name="password" type="password" placeholder="비밀번호" />
                     <ul>
                         <li>
