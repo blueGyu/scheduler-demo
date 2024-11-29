@@ -68,5 +68,5 @@ document.querySelector("form").addEventListener("submit", (event) => {
     return false;
   }
 
-  return true;
+  event.target.submit();
 });

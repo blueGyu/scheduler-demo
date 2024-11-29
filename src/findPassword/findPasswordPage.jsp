@@ -14,7 +14,7 @@
             <h1>stageus</h1>
             <div id="form-wrap">
                 <h2>비밀번호 찾기</h2>
-                <form method="post" action="">
+                <form method="post" action="findPasswordAction.jsp">
                     <input id="id" name="id" type="text" placeholder="아이디"/>
                     <input id="email" name="email" type="text" placeholder="이메일"/>
                     <input id="name" name="name" type="text" placeholder="이름"/>
