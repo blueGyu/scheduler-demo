@@ -14,7 +14,7 @@
             <h1>stageus</h1>
             <div id="form-wrap">
                 <h2>아이디 찾기</h2>
-                <form method="post" action="">
+                <form method="post" action="findIdAction.jsp">
                     <input id="email" name="email" type="text" placeholder="이메일"/>
                     <input id="name" name="name" type="text" placeholder="이름"/>
                     <input id="phone" name="phone" type="tel" placeholder="전화번호"/>
