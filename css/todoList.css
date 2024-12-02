@@ -1,0 +1,184 @@
+#schedule-wrap {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 400px;
+}
+
+#btn-wrap {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 6px;
+}
+
+#btn-wrap > p {
+  font-size: 12px;
+}
+
+#include-crew-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 30px;
+  background-color: #d9d9d9;
+  border-radius: 9999px;
+}
+
+#include-crew-button.on {
+  justify-content: start;
+}
+#include-crew-button.off {
+  justify-content: end;
+}
+
+#circle {
+  width: 26px;
+  height: 26px;
+  margin: 0 2px;
+  background-color: var(--primary-button-background-color);
+  border-radius: 100%;
+}
+
+#schedule-list-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--wrap-component-border-color);
+  border-radius: var(--wrap-component-border-radius);
+}
+
+#date {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#schedule-list {
+  width: 100%;
+  height: 330px;
+  overflow-y: auto;
+}
+
+#schedule-list > li {
+  text-align: center;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--wrap-component-border-color);
+  border-radius: var(--dropdown-component-border-radius);
+}
+
+.schedule {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.schedule > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#add-form {
+  padding: 20px;
+  border: 1px solid var(--wrap-component-border-color);
+  border-radius: var(--wrap-component-border-radius);
+}
+
+.time-seletor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.select-box-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 12px;
+}
+
+.select-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  height: 100%;
+  padding: 0 0.75rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+}
+
+.arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 10;
+  height: 100px;
+  /* padding: 0.75rem 0; */
+  border: 1px solid var(--dropdown-component-border-color);
+  border-radius: var(--dropdown-component-border-radius);
+  background-color: var(--dropdown-component-background-color);
+  overflow-y: scroll;
+}
+
+.dropdown-menu.hidden {
+  display: none;
+}
+
+.dropdown-menu > li {
+  padding: 0.75rem;
+}
+
+.dropdown-menu > li:hover {
+  background-color: var(--dropdown-list-hover-backround-color);
+}
+
+input.hidden {
+  display: none;
+}
+
+textarea {
+  flex: 1;
+  flex-basis: 90px;
+  padding: 16px;
+  border: 1px solid var(--wrap-component-border-color);
+  border-radius: var(--wrap-component-border-radius);
+}
+
+button.primary {
+  width: 70px;
+  height: 100%;
+}
