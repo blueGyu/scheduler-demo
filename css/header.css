@@ -1,0 +1,34 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 20px;
+  background-color: var(--wrap-component-background-color);
+}
+
+#account {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+strong {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+#signout {
+  padding: 10px 14px;
+  border: 1px solid var(--wrap-component-border-color);
+  border-radius: 9999px;
+}
+
+#signout:hover {
+  background-color: var(--primary-button-hover-background-color);
+  color: var(--primary-button-text-color);
+}

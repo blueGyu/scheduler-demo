@@ -1,5 +1,6 @@
 :root {
   --logo-text-color: #3f79ed;
+  --header-height: 58px;
 
   --input-border-color: #cfd0d4;
   --input-border-radius: 0.375rem;
