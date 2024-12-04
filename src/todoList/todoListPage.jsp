@@ -36,7 +36,7 @@
     try {
         date = request.getParameter("date") != null ? request.getParameter("date") : LocalDate.now().toString();
         showAll = request.getParameter("showAll");
-        int isShowAll = "Y".equals(showAll) ? 1 : 0;
+        int isShowAll = "Y".equals(showAll) && "1".equals((String) session.getAttribute("rankId")) ? 1 : 0;
 
         Class.forName("org.mariadb.jdbc.Driver");
 
@@ -86,10 +86,13 @@
     </head>
     <body>
         <jsp:include page="/src/common/header.jsp" />
-        <div id="schedule-wrap">
+        <div id="todo-list-wrap">
             <main>
                 <div id="btn-wrap">
-                    <% if (session.getAttribute("rankId") != null) { %>
+                    <div id="arrow-btn-wrap">
+                        <a href="/src/scheduler/schedulerPage.jsp?date=<%=date%>&showAll=<%=showAll%>"><div id="arrow-btn"></div></a>
+                    </div>
+                    <% if (session.getAttribute("rankId") != null && "1".equals((String) session.getAttribute("rankId"))) { %>
                         <% if ("Y".equals(showAll)) { %>
                             <p>팀원 일정 포함</p>
                             <a id="include-crew-button" class="on" href="/src/todoList/todoListPage.jsp?date=<%=date%>&showAll=N">

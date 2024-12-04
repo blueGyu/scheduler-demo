@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   border: 0;
+  outline: none;
   background: none;
   font-size: 16px;
   font-weight: normal;
@@ -19,4 +20,8 @@ a {
 
 select {
   appearance: none;
+}
+
+textarea {
+  resize: none;
 }
