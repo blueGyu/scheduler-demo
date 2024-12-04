@@ -15,6 +15,10 @@
 
 <%
 
+    if (session.getAttribute("changePasswordMemberId") == null) {
+        response.sendRedirect("/src/signin/signinPage.jsp");
+    }
+
     Connection connect = null;
     int result = 0;
 

@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    if (session.getAttribute("changePasswordMemberId") == null) {
+        response.sendRedirect("/src/signin/signinPage.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
