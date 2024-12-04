@@ -12,6 +12,8 @@
 <%@ page import="java.sql.SQLException"%>
 <%-- 단방향 암호화 bcrypt 라이브러리 --%>
 <%@ page import="org.mindrot.jbcrypt.BCrypt"%>
+<%-- 시간 관련 라이브러리 --%>
+<%@ page import="java.time.LocalDate"%>
 
 <%
 
@@ -37,7 +39,7 @@
 
         connect = DriverManager.getConnection("jdbc:mariadb://localhost:3306/scheduler", "bluegyu", "1234");
 
-        String sql = "SELECT member_id, name FROM member_tb WHERE id=? AND password=? LIMIT 1;";
+        String sql = "SELECT member_id, rank_id, dept_id, name FROM member_tb WHERE id=? AND password=? LIMIT 1;";
         PreparedStatement query = connect.prepareStatement(sql);
         query.setString(1, id);
         query.setString(2, password);
@@ -50,10 +52,12 @@
         } else {
             // 세션 추가하기;
             session.setAttribute("memberId", result.getString("member_id"));
+            session.setAttribute("rankId", result.getString("rank_id"));
+            session.setAttribute("deptId", result.getString("dept_id"));
             session.setAttribute("memberName", result.getString("name"));
 
             // 메인화면으로 이동
-            out.println("<script>alert('로그인에 성공했습니다.'); location.href='/src/scheduler/schedulerPage.jsp'</script>");
+            out.println("<script>alert('로그인에 성공했습니다.'); location.href='/src/scheduler/schedulerPage.jsp?date=" + LocalDate.now().toString() + "'</script>");
         }
     } catch (SQLException err) {
         out.println("<script>console.log(" + err + ");</script>");
